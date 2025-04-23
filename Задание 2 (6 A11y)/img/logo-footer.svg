@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="300" height="100">
+  <!-- Фон логотипа прозрачный для футера -->
+  <rect width="300" height="100" rx="10" fill="none" />
+  
+  <!-- Иконка отеля -->
+  <path d="M50 25 L80 10 L110 25 V65 H50 Z" fill="#ffa41b" stroke="#ffffff" stroke-width="2" />
+  <rect x="65" y="45" width="15" height="20" fill="#ffffff" />
+  <rect x="85" y="35" width="15" height="30" fill="#ffffff" />
+  
+  <!-- Текст логотипа -->
+  <text x="130" y="45" font-family="Arial, sans-serif" font-weight="bold" font-size="28" fill="#ffffff">ОТЕЛЬ</text>
+  <text x="130" y="75" font-family="Arial, sans-serif" font-weight="bold" font-size="32" fill="#ffa41b">КОМФОРТ</text>
+</svg>

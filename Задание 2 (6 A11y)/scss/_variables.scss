@@ -1,0 +1,92 @@
+/* 
+ * ПЕРЕМЕННЫЕ
+ * Файл содержит все глобальные переменные SCSS проекта
+ */
+
+/* Основные цвета проекта */
+$color-primary: #1a5f7a;    /* Основной цвет (темно-синий) */
+$color-secondary: #ffa41b;  /* Вторичный цвет (оранжевый) */
+$color-accent: #ff5151;     /* Акцентный цвет (красный) */
+$color-light: #f2f8fc;      /* Светлый фон */
+$color-dark: #233142;       /* Темный цвет (для фона футера, текста) */
+$color-text: #2d3748;       /* Основной цвет текста */
+$color-text-light: #718096; /* Цвет для вспомогательного текста */
+$color-white: #ffffff;      /* Белый цвет */
+$color-border: #e2e8f0;     /* Цвет границ элементов */
+
+/* Типографика */
+$font-primary: 'Montserrat', sans-serif;   /* Основной шрифт */
+$font-secondary: 'Roboto', sans-serif;     /* Дополнительный шрифт */
+
+/* Размеры шрифтов */
+$font-size-base: 16px;      /* Базовый размер шрифта */
+$font-size-sm: 0.875rem;    /* Маленький текст (14px при базовом размере 16px) */
+$font-size-md: 1rem;        /* Стандартный текст (16px) */
+$font-size-lg: 1.125rem;    /* Увеличенный текст (18px) */
+$font-size-xl: 1.25rem;     /* Крупный текст (20px) */
+$font-size-2xl: 1.5rem;     /* Заголовки h3-h4 (24px) */
+$font-size-3xl: 1.875rem;   /* Заголовки h2 (30px) */
+$font-size-4xl: 2.25rem;    /* Заголовки h1 (36px) */
+
+/* Насыщенность шрифта */
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+/* Межстрочные интервалы */
+$line-height-tight: 1.2;   /* Для заголовков */
+$line-height-normal: 1.5;  /* Для основного текста */
+$line-height-loose: 1.8;   /* Для улучшения читаемости длинных текстовых блоков */
+
+/* Отступы (система размеров) */
+$spacing-1: 0.25rem;   /* 4px */
+$spacing-2: 0.5rem;    /* 8px */
+$spacing-3: 0.75rem;   /* 12px */
+$spacing-4: 1rem;      /* 16px */
+$spacing-5: 1.25rem;   /* 20px */
+$spacing-6: 1.5rem;    /* 24px */
+$spacing-8: 2rem;      /* 32px */
+$spacing-10: 2.5rem;   /* 40px */
+$spacing-12: 3rem;     /* 48px */
+$spacing-16: 4rem;     /* 64px */
+$spacing-20: 5rem;     /* 80px */
+
+/* Закругления углов */
+$border-radius-sm: 0.25rem;    /* 4px */
+$border-radius-md: 0.5rem;     /* 8px */
+$border-radius-lg: 1rem;       /* 16px */
+$border-radius-xl: 1.5rem;     /* 24px */
+$border-radius-full: 9999px;   /* Полное закругление (для кнопок-кружков) */
+
+/* Тени */
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+/* Контейнеры и сетка */
+$container-max-width: 1200px;
+$container-padding: $spacing-4;
+
+/* Точки останова для адаптивного дизайна */
+$breakpoint-sm: 576px;   /* Смартфоны */
+$breakpoint-md: 768px;   /* Планшеты */
+$breakpoint-lg: 992px;   /* Ноутбуки */
+$breakpoint-xl: 1200px;  /* Десктопы */
+$breakpoint-xxl: 1400px; /* Большие экраны */
+
+/* Анимации и переходы */
+$transition-fast: 0.15s ease-in-out;
+$transition-normal: 0.3s ease-in-out;
+$transition-slow: 0.5s ease-in-out;
+
+/* Z-индексы для управления перекрытием элементов */
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-fixed: 1030;
+$z-index-modal-backdrop: 1040;
+$z-index-modal: 1050;
+$z-index-popover: 1060;
+$z-index-tooltip: 1070;

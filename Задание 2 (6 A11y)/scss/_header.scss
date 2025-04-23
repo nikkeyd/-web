@@ -1,0 +1,218 @@
+/* 
+ * СТИЛИ ШАПКИ САЙТА
+ * Содержит стили для хедера и навигации
+ */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba($color-white, 0.95); /* Полупрозрачный фон */
+  box-shadow: $shadow-sm;
+  z-index: $z-index-sticky;
+  transition: background-color $transition-normal;
+
+  /* Стили при прокрутке страницы */
+  &.scrolled {
+    background-color: $color-white; /* Убираем прозрачность при прокрутке */
+    box-shadow: $shadow-md;
+  }
+
+  /* Контейнер хедера */
+  &__container {
+    @include container;
+    @include flex(row, space-between, center);
+    height: 70px;
+
+    @include media-breakpoint-up(lg) {
+      height: 80px; /* Увеличиваем высоту на десктопах */
+    }
+  }
+
+  /* Контейнер для логотипа */
+  &__logo-container {
+    flex-shrink: 0;
+    max-width: 120px;
+
+    @include media-breakpoint-up(md) {
+      max-width: 150px; /* Увеличиваем на планшетах */
+    }
+
+    @include media-breakpoint-up(lg) {
+      max-width: 180px; /* Еще больше на десктопах */
+    }
+  }
+
+  /* Логотип */
+  &__logo {
+    display: block;
+    max-height: 50px;
+    width: auto;
+  }
+
+  /* Кнопка мобильного меню (бургер) */
+  &__menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: $z-index-dropdown;
+
+    @include media-breakpoint-up(lg) {
+      display: none; /* Скрываем на десктопах */
+    }
+
+    /* Полоски бургер-меню */
+    &-icon, &-icon::before, &-icon::after {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: $color-dark;
+      transition: transform $transition-normal, opacity $transition-normal;
+    }
+
+    &-icon {
+      position: relative;
+
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+      }
+
+      &::before {
+        top: -8px;
+      }
+
+      &::after {
+        bottom: -8px;
+      }
+    }
+
+    /* Анимация бургер-меню при активации */
+    &[aria-expanded="true"] {
+      .header__menu-icon {
+        transform: rotate(45deg);
+
+        &::before {
+          opacity: 0;
+        }
+
+        &::after {
+          transform: translateY(8px) rotate(-90deg);
+        }
+      }
+    }
+  }
+
+  /* Навигационное меню */
+  &__nav {
+    display: none; /* Скрыто по умолчанию на мобильных */
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: $color-white;
+    padding: $spacing-4 0;
+    box-shadow: $shadow-md;
+
+    /* Класс для активного меню на мобильных */
+    &.active {
+      display: block;
+      animation: fadeIn $transition-normal;
+    }
+
+    @include media-breakpoint-up(lg) {
+      position: static;
+      display: block;
+      width: auto;
+      background-color: transparent;
+      padding: 0;
+      box-shadow: none;
+      margin-right: $spacing-4;
+    }
+  }
+
+  /* Кнопка бронирования */
+  &__booking-btn {
+    @include button-style($color-secondary, $color-dark, darken($color-secondary, 10%));
+    display: none; /* Скрыта по умолчанию на мобильных */
+
+    @include media-breakpoint-up(md) {
+      display: inline-block;
+      padding: $spacing-2 $spacing-4;
+      font-size: $font-size-sm;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: $spacing-3 $spacing-6;
+      font-size: $font-size-md;
+    }
+  }
+}
+
+/* Стили для навигационного меню */
+.nav {
+  /* Список пунктов меню */
+  &__list {
+    @include flex(column, flex-start, flex-start);
+
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  /* Пункт меню */
+  &__item {
+    margin-bottom: $spacing-3;
+    width: 100%;
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 0;
+      margin-right: $spacing-6;
+      width: auto;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  /* Ссылка в меню */
+  &__link {
+    display: block;
+    padding: $spacing-2 $spacing-4;
+    color: $color-dark;
+    font-weight: $font-weight-medium;
+    transition: color $transition-normal;
+
+    &:hover, &:focus {
+      color: $color-primary;
+    }
+
+    /* Активный пункт меню */
+    &.active {
+      color: $color-primary;
+      font-weight: $font-weight-semibold;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: 0; /* Убираем отступы на десктопах */
+    }
+  }
+}
+
+/* Дополнительные настройки для десктопов */
+@include media-breakpoint-up(lg) {
+  .header {
+    &__container {
+      position: relative;
+    }
+  }
+}
