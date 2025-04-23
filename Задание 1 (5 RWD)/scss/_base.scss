@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $font-size-base;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-primary;
+  font-size: $font-size-md;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-normal;
+  color: $color-text;
+  background-color: $color-light;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+  transition: color $transition-normal;
+
+  &:hover, &:focus {
+    color: darken($color-primary, 10%);
+  }
+}
+
+img {
+  @include responsive-image;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-primary;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  color: $color-dark;
+  margin-bottom: $spacing-4;
+}
+
+h1 {
+  font-size: $font-size-4xl;
+
+  @include media-breakpoint-up(md) {
+    font-size: 2.5rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 3rem;
+  }
+}
+
+h2 {
+  font-size: $font-size-3xl;
+
+  @include media-breakpoint-up(md) {
+    font-size: 2.25rem;
+  }
+}
+
+h3 {
+  font-size: $font-size-2xl;
+}
+
+h4 {
+  font-size: $font-size-xl;
+}
+
+h5 {
+  font-size: $font-size-lg;
+}
+
+h6 {
+  font-size: $font-size-md;
+}
+
+p {
+  margin-bottom: $spacing-4;
+}
+
+.container {
+  @include container;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: $spacing-8;
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: $color-secondary;
+    margin: $spacing-3 auto 0;
+  }
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+.skip-link {
+  @include visually-hidden;
+  background-color: $color-primary;
+  color: $color-white;
+  padding: $spacing-2 $spacing-4;
+  z-index: $z-index-tooltip;
+
+  &:focus {
+    position: fixed;
+    top: $spacing-4;
+    left: $spacing-4;
+    width: auto;
+    height: auto;
+    clip: auto;
+    margin: 0;
+  }
+}
+
+section {
+  padding: $spacing-12 0;
+
+  @include media-breakpoint-up(md) {
+    padding: $spacing-16 0;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: $spacing-20 0;
+  }
+}
+
+.btn {
+  @include button-style($color-primary, $color-white, darken($color-primary, 10%));
+}
+
+.btn--secondary {
+  @include button-style($color-secondary, $color-dark, darken($color-secondary, 10%));
+}
+
+.btn--outlined {
+  @include button-style(transparent, $color-primary, rgba($color-primary, 0.1));
+  border: 2px solid $color-primary;
+
+  &:hover, &:focus {
+    color: $color-primary;
+  }
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: $spacing-3 $spacing-4;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-md;
+  background-color: $color-white;
+  transition: border-color $transition-normal, box-shadow $transition-normal;
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+    box-shadow: 0 0 0 3px rgba($color-primary, 0.2);
+  }
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+label {
+  display: block;
+  margin-bottom: $spacing-2;
+  font-weight: $font-weight-medium;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

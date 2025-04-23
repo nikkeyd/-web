@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Отель "Комфорт" - Автоматизированная система управления</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Skip link для доступности -->
+  <a href="#main-content" class="skip-link">Перейти к основному содержанию</a>
+
+  <!-- Шапка сайта -->
+  <header class="header">
+    <div class="header__container">
+      <div class="header__logo-container">
+        <img src="img/logo-medium.svg" 
+             srcset="img/logo-small.svg 300w, img/logo-medium.svg 600w, img/logo-large.svg 900w" 
+             sizes="(max-width: 600px) 90vw, (max-width: 1024px) 50vw, 30vw"
+             alt="Логотип отеля Комфорт" class="header__logo">
+      </div>
+      
+      <button class="header__menu-toggle" aria-expanded="false" aria-controls="main-nav">
+        <span class="visually-hidden">Меню</span>
+        <span class="header__menu-icon"></span>
+      </button>
+      
+      <nav class="header__nav" id="main-nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#rooms" class="nav__link">Номера</a></li>
+          <li class="nav__item"><a href="#services" class="nav__link">Услуги</a></li>
+          <li class="nav__item"><a href="#booking" class="nav__link">Бронирование</a></li>
+          <li class="nav__item"><a href="#gallery" class="nav__link">Галерея</a></li>
+          <li class="nav__item"><a href="#reviews" class="nav__link">Отзывы</a></li>
+          <li class="nav__item"><a href="#contacts" class="nav__link">Контакты</a></li>
+        </ul>
+      </nav>
+      
+      <a href="#booking" class="header__booking-btn">Забронировать</a>
+    </div>
+  </header>
+
+  <!-- Основной контент -->
+  <main id="main-content">
+    <!-- Секция героя -->
+    <section class="hero">
+      <div class="hero__container">
+        <h1 class="hero__title">Комфортный отдых в самом сердце города</h1>
+        <p class="hero__subtitle">Автоматизированная система бронирования для идеального отдыха</p>
+        <div class="hero__cta">
+          <a href="#booking" class="hero__button">Забронировать сейчас</a>
+          <a href="#rooms" class="hero__button hero__button--secondary">Посмотреть номера</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция преимуществ -->
+    <section class="features">
+      <div class="container">
+        <h2 class="section-title">Наши преимущества</h2>
+        <div class="features__grid">
+          <div class="feature-card">
+            <div class="feature-card__icon feature-card__icon--booking"></div>
+            <h3 class="feature-card__title">Мгновенное бронирование</h3>
+            <p class="feature-card__text">Забронируйте номер онлайн за несколько минут без звонков и ожидания</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon feature-card__icon--service"></div>
+            <h3 class="feature-card__title">Персональный сервис</h3>
+            <p class="feature-card__text">Индивидуальный подход к каждому гостю и внимание к деталям</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon feature-card__icon--location"></div>
+            <h3 class="feature-card__title">Удобное расположение</h3>
+            <p class="feature-card__text">В центре города, рядом с основными достопримечательностями</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция номеров -->
+    <section class="rooms" id="rooms">
+      <div class="container">
+        <h2 class="section-title">Наши номера</h2>
+        <div class="rooms__grid">
+          <article class="room-card">
+            <div class="room-card__image-container">
+              <img src="img/room1.png" 
+                   alt="Стандартный номер" class="room-card__image">
+            </div>
+            <div class="room-card__content">
+              <h3 class="room-card__title">Стандартный номер</h3>
+              <ul class="room-card__features">
+                <li class="room-card__feature">Площадь: 25 м²</li>
+                <li class="room-card__feature">Вместимость: 2 человека</li>
+                <li class="room-card__feature">Кровать: King-size</li>
+                <li class="room-card__feature">Wi-Fi, кондиционер, телевизор</li>
+              </ul>
+              <p class="room-card__price">от 3 500 ₽/ночь</p>
+              <a href="#booking" class="room-card__button">Забронировать</a>
+            </div>
+          </article>
+          
+          <article class="room-card">
+            <div class="room-card__image-container">
+              <img src="img/room2.png" 
+                   alt="Люкс номер" class="room-card__image">
+            </div>
+            <div class="room-card__content">
+              <h3 class="room-card__title">Люкс</h3>
+              <ul class="room-card__features">
+                <li class="room-card__feature">Площадь: 45 м²</li>
+                <li class="room-card__feature">Вместимость: 2-4 человека</li>
+                <li class="room-card__feature">Спальня и гостиная</li>
+                <li class="room-card__feature">Джакузи, сауна, мини-бар</li>
+              </ul>
+              <p class="room-card__price">от 7 500 ₽/ночь</p>
+              <a href="#booking" class="room-card__button">Забронировать</a>
+            </div>
+          </article>
+          
+          <article class="room-card">
+            <div class="room-card__image-container">
+              <img src="img/room3.png" 
+                   alt="Семейный номер" class="room-card__image">
+            </div>
+            <div class="room-card__content">
+              <h3 class="room-card__title">Семейный номер</h3>
+              <ul class="room-card__features">
+                <li class="room-card__feature">Площадь: 60 м²</li>
+                <li class="room-card__feature">Вместимость: до 6 человек</li>
+                <li class="room-card__feature">2 спальни, гостиная</li>
+                <li class="room-card__feature">Кухня, игровая зона для детей</li>
+              </ul>
+              <p class="room-card__price">от 9 000 ₽/ночь</p>
+              <a href="#booking" class="room-card__button">Забронировать</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция услуг -->
+    <section class="services" id="services">
+      <div class="container">
+        <h2 class="section-title">Наши услуги</h2>
+        <div class="services__grid">
+          <div class="service-card">
+            <div class="service-card__icon service-card__icon--restaurant"></div>
+            <h3 class="service-card__title">Ресторан</h3>
+            <p class="service-card__text">Изысканная кухня от шеф-повара с использованием местных продуктов</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-card__icon service-card__icon--spa"></div>
+            <h3 class="service-card__title">СПА-центр</h3>
+            <p class="service-card__text">Массаж, сауна, бассейн и косметические процедуры для релаксации</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-card__icon service-card__icon--fitness"></div>
+            <h3 class="service-card__title">Фитнес-зал</h3>
+            <p class="service-card__text">Современное оборудование и персональные тренеры</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-card__icon service-card__icon--transfer"></div>
+            <h3 class="service-card__title">Трансфер</h3>
+            <p class="service-card__text">Встреча в аэропорту и доставка в отель на комфортабельном автомобиле</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция бронирования -->
+    <section class="booking" id="booking">
+      <div class="container">
+        <h2 class="section-title">Забронировать номер</h2>
+        <form class="booking-form">
+          <div class="booking-form__grid">
+            <div class="form-group">
+              <label for="check-in" class="form-label">Дата заезда</label>
+              <input type="date" id="check-in" name="check-in" class="form-input" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="check-out" class="form-label">Дата выезда</label>
+              <input type="date" id="check-out" name="check-out" class="form-input" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="guests" class="form-label">Количество гостей</label>
+              <select id="guests" name="guests" class="form-input" required>
+                <option value="1">1 гость</option>
+                <option value="2" selected>2 гостя</option>
+                <option value="3">3 гостя</option>
+                <option value="4">4 гостя</option>
+                <option value="5">5 гостей</option>
+                <option value="6">6 гостей</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="room-type" class="form-label">Тип номера</label>
+              <select id="room-type" name="room-type" class="form-input" required>
+                <option value="standard">Стандартный</option>
+                <option value="lux">Люкс</option>
+                <option value="family">Семейный</option>
+              </select>
+            </div>
+            
+            <div class="form-group form-group--full">
+              <label for="name" class="form-label">ФИО</label>
+              <input type="text" id="name" name="name" class="form-input" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone" class="form-label">Телефон</label>
+              <input type="tel" id="phone" name="phone" class="form-input" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" name="email" class="form-input" required>
+            </div>
+            
+            <div class="form-group form-group--full">
+              <label for="comments" class="form-label">Комментарии</label>
+              <textarea id="comments" name="comments" class="form-input form-input--textarea"></textarea>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-checkbox">
+              <input type="checkbox" name="privacy" required>
+              <span class="form-checkbox__text">Я согласен с <a href="#">политикой конфиденциальности</a></span>
+            </label>
+          </div>
+          
+          <button type="submit" class="booking-form__submit">Забронировать</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Секция галереи -->
+    <section class="gallery" id="gallery">
+      <div class="container">
+        <h2 class="section-title">Галерея</h2>
+        <div class="gallery__grid">
+          <div class="gallery__item">
+            <img src="img/gallery1.png" 
+                 alt="Лобби отеля" class="gallery__image">
+          </div>
+          <div class="gallery__item">
+            <img src="img/gallery2.png" 
+                 alt="Ресторан отеля" class="gallery__image">
+          </div>
+          <div class="gallery__item">
+            <img src="img/gallery3.png" 
+                 alt="СПА-центр" class="gallery__image">
+          </div>
+          <div class="gallery__item">
+            <img src="img/gallery4.png" 
+                 alt="Бассейн" class="gallery__image">
+          </div>
+          <div class="gallery__item">
+            <img src="img/gallery5.png" 
+                 alt="Фитнес-зал" class="gallery__image">
+          </div>
+          <div class="gallery__item">
+            <img src="img/gallery6.png" 
+                 alt="Конференц-зал" class="gallery__image">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция отзывов -->
+    <section class="reviews" id="reviews">
+      <div class="container">
+        <h2 class="section-title">Отзывы гостей</h2>
+        <div class="reviews__slider">
+          <div class="review-card">
+            <div class="review-card__rating">★★★★★</div>
+            <p class="review-card__text">"Отличный сервис, удобное бронирование через приложение. Номер превзошел все ожидания, очень чисто и уютно. Обязательно вернусь снова!"</p>
+            <p class="review-card__author">- Анна К., Москва</p>
+          </div>
+          
+          <div class="review-card">
+            <div class="review-card__rating">★★★★★</div>
+            <p class="review-card__text">"Потрясающий отель с современной системой бронирования. Персонал очень вежливый и внимательный. Завтрак просто великолепен!"</p>
+            <p class="review-card__author">- Михаил В., Санкт-Петербург</p>
+          </div>
+          
+          <div class="review-card">
+            <div class="review-card__rating">★★★★☆</div>
+            <p class="review-card__text">"Очень удобное приложение для бронирования и управления своим пребыванием. СПА-центр отеля один из лучших, что я посещала."</p>
+            <p class="review-card__author">- Елена Д., Казань</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция контактов -->
+    <section class="contacts" id="contacts">
+      <div class="container">
+        <h2 class="section-title">Контакты</h2>
+        <div class="contacts__grid">
+          <div class="contacts__info">
+            <ul class="contacts__list">
+              <li class="contacts__item">
+                <div class="contacts__icon contacts__icon--address"></div>
+                <div class="contacts__text">
+                  <h3 class="contacts__subtitle">Адрес</h3>
+                  <p>г. Москва, ул. Гостиничная, 12</p>
+                </div>
+              </li>
+              
+              <li class="contacts__item">
+                <div class="contacts__icon contacts__icon--phone"></div>
+                <div class="contacts__text">
+                  <h3 class="contacts__subtitle">Телефон</h3>
+                  <p><a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+                </div>
+              </li>
+              
+              <li class="contacts__item">
+                <div class="contacts__icon contacts__icon--email"></div>
+                <div class="contacts__text">
+                  <h3 class="contacts__subtitle">Email</h3>
+                  <p><a href="mailto:info@hotelcomfort.ru">info@hotelcomfort.ru</a></p>
+                </div>
+              </li>
+              
+              <li class="contacts__item">
+                <div class="contacts__icon contacts__icon--hours"></div>
+                <div class="contacts__text">
+                  <h3 class="contacts__subtitle">Режим работы</h3>
+                  <p>Круглосуточно</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="contacts__map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2234.5678901234567!2d37.1234567!3d55.7654321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTXCsDQ1JzU1LjYiTiAzN8KwMDcnMjQuNCJF!5e0!3m2!1sru!2sru!4v1600000000000!5m2!1sru!2sru" 
+                  width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" 
+                  title="Карта расположения отеля"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Подвал сайта -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__column">
+          <div class="footer__logo-container">
+            <img src="img/logo-footer.svg" alt="Логотип отеля Комфорт" class="footer__logo">
+          </div>
+          <p class="footer__description">Автоматизированная система управления отелем для комфортного пребывания наших гостей</p>
+        </div>
+        
+        <div class="footer__column">
+          <h3 class="footer__title">Навигация</h3>
+          <ul class="footer__links">
+            <li><a href="#rooms" class="footer__link">Номера</a></li>
+            <li><a href="#services" class="footer__link">Услуги</a></li>
+            <li><a href="#booking" class="footer__link">Бронирование</a></li>
+            <li><a href="#gallery" class="footer__link">Галерея</a></li>
+            <li><a href="#reviews" class="footer__link">Отзывы</a></li>
+            <li><a href="#contacts" class="footer__link">Контакты</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer__column">
+          <h3 class="footer__title">Контакты</h3>
+          <ul class="footer__contacts">
+            <li class="footer__contact">
+              <div class="footer__contact-icon footer__contact-icon--address"></div>
+              <p>г. Москва, ул. Гостиничная, 12</p>
+            </li>
+            <li class="footer__contact">
+              <div class="footer__contact-icon footer__contact-icon--phone"></div>
+              <p><a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+            </li>
+            <li class="footer__contact">
+              <div class="footer__contact-icon footer__contact-icon--email"></div>
+              <p><a href="mailto:info@hotelcomfort.ru">info@hotelcomfort.ru</a></p>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="footer__column">
+          <h3 class="footer__title">Подписка</h3>
+          <p class="footer__subscription-text">Подпишитесь на нашу рассылку, чтобы получать специальные предложения и акции</p>
+          <form class="footer__subscription-form">
+            <input type="email" placeholder="Ваш email" class="footer__input" required>
+            <button type="submit" class="footer__button">Подписаться</button>
+          </form>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link footer__social-link--fb" aria-label="Facebook"></a>
+            <a href="#" class="footer__social-link footer__social-link--ig" aria-label="Instagram"></a>
+            <a href="#" class="footer__social-link footer__social-link--vk" aria-label="ВКонтакте"></a>
+            <a href="#" class="footer__social-link footer__social-link--tg" aria-label="Telegram"></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2025 Отель "Комфорт". Все права защищены.</p>
+        <ul class="footer__policy">
+          <li><a href="#" class="footer__policy-link">Политика конфиденциальности</a></li>
+          <li><a href="#" class="footer__policy-link">Пользовательское соглашение</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

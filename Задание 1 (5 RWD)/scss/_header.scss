@@ -1,0 +1,197 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba($color-white, 0.95);
+  box-shadow: $shadow-sm;
+  z-index: $z-index-sticky;
+  transition: background-color $transition-normal;
+
+  &.scrolled {
+    background-color: $color-white;
+    box-shadow: $shadow-md;
+  }
+
+  &__container {
+    @include container;
+    @include flex(row, space-between, center);
+    height: 70px;
+
+    @include media-breakpoint-up(lg) {
+      height: 80px;
+    }
+  }
+
+  &__logo-container {
+    flex-shrink: 0;
+    max-width: 120px;
+
+    @include media-breakpoint-up(md) {
+      max-width: 150px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      max-width: 180px;
+    }
+  }
+
+  &__logo {
+    display: block;
+    max-height: 50px;
+    width: auto;
+  }
+
+  &__menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: $z-index-dropdown;
+
+    @include media-breakpoint-up(lg) {
+      display: none;
+    }
+
+    &-icon, &-icon::before, &-icon::after {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: $color-dark;
+      transition: transform $transition-normal, opacity $transition-normal;
+    }
+
+    &-icon {
+      position: relative;
+
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+      }
+
+      &::before {
+        top: -8px;
+      }
+
+      &::after {
+        bottom: -8px;
+      }
+    }
+
+    &[aria-expanded="true"] {
+      .header__menu-icon {
+        transform: rotate(45deg);
+
+        &::before {
+          opacity: 0;
+        }
+
+        &::after {
+          transform: translateY(8px) rotate(-90deg);
+        }
+      }
+    }
+  }
+
+  &__nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: $color-white;
+    padding: $spacing-4 0;
+    box-shadow: $shadow-md;
+
+    &.active {
+      display: block;
+      animation: fadeIn $transition-normal;
+    }
+
+    @include media-breakpoint-up(lg) {
+      position: static;
+      display: block;
+      width: auto;
+      background-color: transparent;
+      padding: 0;
+      box-shadow: none;
+      margin-right: $spacing-4;
+    }
+  }
+
+  &__booking-btn {
+    @include button-style($color-secondary, $color-dark, darken($color-secondary, 10%));
+    display: none;
+
+    @include media-breakpoint-up(md) {
+      display: inline-block;
+      padding: $spacing-2 $spacing-4;
+      font-size: $font-size-sm;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: $spacing-3 $spacing-6;
+      font-size: $font-size-md;
+    }
+  }
+}
+
+.nav {
+  &__list {
+    @include flex(column, flex-start, flex-start);
+
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    margin-bottom: $spacing-3;
+    width: 100%;
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 0;
+      margin-right: $spacing-6;
+      width: auto;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: $spacing-2 $spacing-4;
+    color: $color-dark;
+    font-weight: $font-weight-medium;
+    transition: color $transition-normal;
+
+    &:hover, &:focus {
+      color: $color-primary;
+    }
+
+    &.active {
+      color: $color-primary;
+      font-weight: $font-weight-semibold;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: 0;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .header {
+    &__container {
+      position: relative;
+    }
+  }
+}
